@@ -5,7 +5,7 @@
 {% block codigo_fatal2 %}
 
 Seguro que queres borrar el trabajo {{object}}?
-<form method="post" action="{% url 'eliminar trabajo' trabajo_id=object.id %}" > {% csrf_token %}
-    <input type="submit" value="Borrar"
-</form>
+<button>
+    <a href="{% url 'eliminar trabajo' trabajo_id=trabajo.id %}">Eliminar</a>
+</button>
 {% endblock %}
