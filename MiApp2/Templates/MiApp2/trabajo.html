@@ -6,6 +6,17 @@
     Trabajo
 {% endblock title%}
 
+
+{% block codigo_fatal %}
+                    <ul class="navbar-nav ms-auto">
+                        {% if request.user.is_authenticated %} 
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Crear Trabajo' %}"> Crear Trabajo</a>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Buscar Trabajo' %}"> Buscar Trabajo</a>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'List' %}"> Listar Trabajo</a> 
+                        {% endif %}
+                    </ul>
+{% endblock %}
+
 {% block codigo_fatal2 %}
 
     <h1>Nuestros Trabajos:</h1>

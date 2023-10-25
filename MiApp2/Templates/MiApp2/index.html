@@ -36,11 +36,6 @@
                         {% if request.user.is_authenticated %} 
                         <li class="nav-item"><a class="nav-link" href="{% url 'Mostrar Trabajo' %}">Mostrar Trabajo</a>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Mostrar Empleados' %}"> Mostrar Empleados</a>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Crear Trabajo' %}"> Crear Trabajo</a>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Crear Empleado' %}"> Crear Empleado</a>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Buscar Trabajo' %}"> Buscar Trabajo</a>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Buscar Empleado' %}"> Buscar Empleado</a>  
-                        <li class="nav-item"><a class="nav-link" href="{% url 'List' %}"> Listar Trabajo</a> 
                         <li class="nav-item"><a class="nav-link" href="{% url 'Soporte' %}"> Soporte</a>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Logout' %}"> Logout</a>  
                         {% else %}
