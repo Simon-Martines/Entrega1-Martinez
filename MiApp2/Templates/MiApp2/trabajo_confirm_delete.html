@@ -2,10 +2,10 @@
 
 {% load static %}
 
-{% block codigo_fatal %}
+{% block codigo_fatal2 %}
 
-<form metohd="post"> {% csrf_token %}
-    Seguro que queres borrar el trabajo {{object}}?
+Seguro que queres borrar el trabajo {{object}}?
+<form method="post" action="{% url 'eliminar trabajo' trabajo_id=object.id %}" > {% csrf_token %}
     <input type="submit" value="Borrar"
 </form>
 {% endblock %}

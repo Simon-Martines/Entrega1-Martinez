@@ -15,11 +15,11 @@
             Email: {{empleado.email}}, Profesion: {{empleado.profesion}}
         </p>
         <button>
-            <a href="(% url 'eliminar empleado' empleado_id=empleado.id %)">Eliminar</a>
+            <a href="{% url 'eliminar empleado' empleado_id=empleado.id %}">Eliminar</a>
         </button>
     &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
         <button>
-            <a href="(% url 'actualizar empleado' empleado_id=empleado.id %)">Actualizar</a>
+            <a href="{% url 'actualizar empleado' empleado_id=empleado.id %}">Actualizar</a>
         </button>
     {% endfor %}
     &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
@@ -27,11 +27,11 @@
     &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
     </br>
         <button>
-            <a href="(% url 'Crear Empleado' %)">Añadir Nuevo Empleado</a>
+            <a href="{% url 'Crear Empleado' %}">Añadir Nuevo Empleado</a>
         </button>
     &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
         <button>
-            <a href="(% url 'Buscar Empleado' %)">Buscar Empleado</a>
+            <a href="{% url 'Buscar Empleado' %}">Buscar Empleado</a>
         </button>
 
 

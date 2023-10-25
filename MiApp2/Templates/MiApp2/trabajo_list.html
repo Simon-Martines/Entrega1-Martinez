@@ -4,9 +4,9 @@
 
 {% block title %}
     Listado Trabajo
-{% endblock title%}
+{% endblock title %}
 
-{% block codigo_fatal %}
+{% block codigo_fatal2 %}
 {% for trabajo in object_list %}
 
 <ul>
@@ -39,7 +39,7 @@
 </button>
     &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
 <button>
-    <a href="{% url 'Search' %}">Buscar nuevo trabajo</a>
+    <a href="{% url 'Buscar Trabajo' %}">Buscar nuevo trabajo</a>
 </button>
 
 {% endblock %}
