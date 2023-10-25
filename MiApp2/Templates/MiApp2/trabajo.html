@@ -1,0 +1,16 @@
+{% extends 'MiApp2/index.html' %}
+
+{% load static %}
+
+{% block title %}
+    Trabajo
+{% endblock title%}
+
+{% block codigo_fatal2 %}
+
+    <h1>Nuestros Trabajos:</h1>
+    {% for trabajo in trabajo %}
+        <p>Nombre: {{trabajo.nombre}}, Salario: {{trabajo.sueldo}}</p>
+    {% endfor%}
+
+{% endblock %}

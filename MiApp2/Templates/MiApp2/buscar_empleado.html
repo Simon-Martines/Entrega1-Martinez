@@ -1,0 +1,32 @@
+{% extends 'MiApp2/index.html' %}
+
+{% load static %}
+
+{% block title %}
+    Buscar Empleado
+{% endblock title %}
+
+{% block codigo_fatal %}
+<form action="" method="get">
+
+    <input type="text" name="email" id="email" placeholder="buscar e-mail">
+
+    <input type="submit" value="Buscar">
+
+</form>
+
+{% if empleados %}
+
+    <ul>
+    {% for empleado in empleados %}
+            <li>Empleado: Nombre: {{empleado.nombre}} apellido: {{empleado.apellido}} con correo: {{empleado.email}} y profesion: {{empleado.profesion}}</li> 
+    {% endfor %}
+    </ul>
+    
+{% else %}
+        <p>No hay datos</p>
+
+{% endif %}
+
+
+{% endblock %}

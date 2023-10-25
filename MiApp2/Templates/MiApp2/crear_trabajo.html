@@ -1,0 +1,21 @@
+{% extends 'MiApp2/index.html' %}
+
+{% load static %}
+
+{% block title %}
+    Crear Trabajo
+{% endblock title %}
+
+{% block codigo_fatal %}
+
+<form action="" method="post"> {% csrf_token %}
+
+    <h3>Crear un Trabajo</h3>
+    <table>
+        {{formulario.as_table}}
+    </table>
+
+    <button type="submit" value="Crear">Crear</button>
+
+</form>
+{% endblock %}

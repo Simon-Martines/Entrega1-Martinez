@@ -1,0 +1,21 @@
+{% extends 'MiApp2/index.html' %}
+
+{% load static %}
+
+{% block title %}
+    Login Acceso
+{% endblock title %}
+
+{% block codigo_fatal %}
+<form action="" method="post">{% csrf_token %}
+    <h3>Acceso Necesario</h3>
+    <br>
+    <table>
+        {{form.as_p}}
+    </table>
+    
+    <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+</form>
+
+
+{% endblock %}

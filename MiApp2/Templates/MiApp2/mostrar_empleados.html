@@ -1,0 +1,38 @@
+{% extends 'MiApp2/index.html' %}
+
+{% load static %}
+
+{% block title %}
+    Mostrar Empleados
+{% endblock title %}
+
+{% block codigo_fatal2 %}
+    <h1>Nuestros Empleados:</1>
+    {% for empleado in empleados %}
+        <p>
+            id: {{empleado.id}}
+            Nombre: {{empleado.nombre}}, Apellido: {{empleado.apellido}},
+            Email: {{empleado.email}}, Profesion: {{empleado.profesion}}
+        </p>
+        <button>
+            <a href="(% url 'eliminar empleado' empleado_id=empleado.id %)">Eliminar</a>
+        </button>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+        <button>
+            <a href="(% url 'actualizar empleado' empleado_id=empleado.id %)">Actualizar</a>
+        </button>
+    {% endfor %}
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    <br>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    </br>
+        <button>
+            <a href="(% url 'Crear Empleado' %)">Añadir Nuevo Empleado</a>
+        </button>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+        <button>
+            <a href="(% url 'Buscar Empleado' %)">Buscar Empleado</a>
+        </button>
+
+
+{% endblock %}

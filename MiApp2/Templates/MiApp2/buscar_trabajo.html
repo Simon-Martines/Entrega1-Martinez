@@ -1,0 +1,31 @@
+{% extends 'MiApp2/index.html' %}
+
+{% load static %}
+
+{% block title %}
+    Buscar Trabajo
+{% endblock title %}
+
+{% block codigo_fatal %}
+<form action="" method="get">
+
+    <input type="text" name="trabajo" id="trabajo" placeholder="buscar trabajo">
+
+    <input type="submit" value="Buscar">
+
+</form>
+
+{% if trabajos %}
+
+    <ul>
+    {% for trabajo in trabajos %}
+            <li>Trabajo: Nombre: {{trabajo.nombre}} Sueldo: {{trabajo.sueldo}} </li> 
+    {% endfor %}
+    </ul>
+    
+{% else %}
+        <p>No hay datos</p>
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'MiApp2/index.html' %}
+
+{% load static %}
+
+{% block title %}
+    Listado Trabajo
+{% endblock title%}
+
+{% block codigo_fatal %}
+{% for trabajo in object_list %}
+
+<ul>
+    <li>
+        <h2>{{trabajo}}</h2>
+        <br>
+        <br>
+        <button>
+            <a href="{% url 'Detail' trabajo.id %}">Ver Detalles</a>
+        </button>
+        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+        <button>
+            <a href="{% url 'Delete' trabajo.id %}">Borrar</a>
+        </button>
+        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+        <button>
+            <a href="{% url 'Update' trabajo.id %}">Actualizar</a>
+        </button>
+
+    </li>
+</ul>
+
+{% endfor %}
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+    <br>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    <br>
+<button>
+    <a href="{% url 'Create' %}">Crear nuevo trabajo</a>
+</button>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+<button>
+    <a href="{% url 'Search' %}">Buscar nuevo trabajo</a>
+</button>
+
+{% endblock %}

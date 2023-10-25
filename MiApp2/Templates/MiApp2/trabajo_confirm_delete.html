@@ -1,0 +1,11 @@
+{% extends 'MiApp2/index.html' %}
+
+{% load static %}
+
+{% block codigo_fatal %}
+
+<form metohd="post"> {% csrf_token %}
+    Seguro que queres borrar el trabajo {{object}}?
+    <input type="submit" value="Borrar"
+</form>
+{% endblock %}

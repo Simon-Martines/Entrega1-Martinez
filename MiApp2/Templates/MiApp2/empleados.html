@@ -1,0 +1,17 @@
+{% extends 'MiApp2/index.html' %}
+
+{% load static %}
+
+{% block title %}
+    Empleado
+{% endblock title%}
+
+
+{% block codigo_fatal2 %}
+    <h1>Nuestros Empleados:</h1>
+
+    {% for empleado in empleado %}
+        <p>Nombre: {{empleado.nombre}}, Apellido: {{empleado.apellido}}, Email: {{empleado.email}}, Profesion: {{empleado.profesion}}</p>
+    {% endfor %}  
+
+{% endblock %}

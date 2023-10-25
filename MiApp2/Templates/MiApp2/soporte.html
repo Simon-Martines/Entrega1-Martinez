@@ -1,0 +1,31 @@
+{% extends 'MiApp2/index.html' %}
+
+{% load static %}
+
+{% block title %}
+    Soporte
+{% endblock title %}
+
+{% block codigo_fatal %}
+<form action="" method="get">
+
+    <input type="text" name="consulta" id="consulta" placeholder="ingresar consulta">
+
+    <input type="submit" value="Mandar">
+
+</form>
+
+{% if soporte %}
+
+    <ul>
+    {% for soporte in soporte %}
+            <li>soporte: Respuesta: {{soporte.respuesta}}</li> 
+    {% endfor %}
+    </ul>
+    
+{% else %}
+        <p>No hay datos</p>
+{% endif %}
+
+
+{% endblock %}

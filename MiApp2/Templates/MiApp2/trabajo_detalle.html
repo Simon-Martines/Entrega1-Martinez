@@ -1,0 +1,20 @@
+{% extends 'MiApp2/index.html' %}
+
+{% load static %}
+
+{% block title %}
+    detalle trabajo
+{% endblock title%}
+
+{% block codigo_fatal %}
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+<h2>{{trabajo.nombre}}</h2>
+
+<h2>{{trabajo.sueldo}}</h2> 
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+<button>
+    <a href="{% url 'list' %}">Regresar</a>
+</button>
+
+{% endblock %}
