@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 
 from MiApp2.models import Trabajo, Empleado
 
@@ -14,6 +14,7 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.views import LogoutView
+from django.urls import reverse
 
 # Create your views here.
 
@@ -193,14 +194,12 @@ def eliminar_trabajo(request, trabajo_id):
 
     trabajos = Trabajo.objects.all()
 
-    context = {'trabajos': trabajos}
-
-    return render(request, 'MiApp2/mostrar_trabajos.html', context=context)
+    return redirect(reverse('List'))
 
 class TrabajoList(ListView):
 
     model = Trabajo
-    template_name = 'MiApp2/trabajos_list.html'
+    template_name = 'MiApp2/trabajo_list.html'
 
 class TrabajoDetailView(DetailView):
     
@@ -210,19 +209,19 @@ class TrabajoDetailView(DetailView):
 class TrabajoCreateView(CreateView):
 
     model = Trabajo
-    success_url = '/trabajo_list'
+    success_url = 'MiApp2/trabajo_list'
     fields = ['nombre', 'sueldo']
 
 class TrabajoUpdateView(UpdateView):
 
     model = Trabajo
-    success_url = '/trabajo_list'
+    success_url = 'MiApp2/trabajo_list'
     fields = ['nombre', 'sueldo']
 
 class TrabajoDeleteView(DeleteView):
 
     model = Trabajo
-    success_url = '/trabajo_list'
+    success_url = 'MiApp2/trabajo_list'
 
 def login_request(request):
 
