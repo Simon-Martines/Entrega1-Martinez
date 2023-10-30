@@ -1,0 +1,28 @@
+{% extends 'MiApp2/index.html' %}
+
+{% load static %}
+
+{% block title %}
+    Editar Perfil
+{% endblock title %}
+
+{% block codigo_fatal %}
+
+<h1>Formulario - Editar Perfil</h1>
+<h1>De {{Usuario}}</h1>
+
+
+<form action="" method="POST">{% csrf_token %}
+
+
+    <table>
+
+
+        {{ miFormulario.as_table }}
+
+
+    </table>
+
+    <input type="submit", value="Enviar">
+
+</form>

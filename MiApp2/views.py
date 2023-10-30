@@ -1,17 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
-
-from MiApp2.models import Trabajo, Empleado
-
-from .forms import CrearTrabajoForm, CrearEmpleadoForm, CrearClientesForm, UserRegisterForm
-
+from MiApp2.models import Trabajo, Empleado, Avatar
+from .forms import CrearTrabajoForm, CrearEmpleadoForm, CrearClientesForm, UserRegisterForm, UserEditForm, AvatarForm
+from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView
-
 from django.views.generic.detail import DetailView
-
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-
+from django import forms
+from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.views import LogoutView
 from django.urls import reverse
@@ -266,3 +262,53 @@ def register(request):
     
     return render(request,'MiApp2/register.html', {'form':form})
 
+@login_required
+def editarPerfil(request):
+
+    usuario=request.user
+    
+    if request.method == 'POST':
+        miFormulario = UserEditForm(request.POST)
+        if miFormulario.is_valid:
+            
+                informacion = miFormulario.cleaned_data
+                
+                usuario.email = informacion^['email']
+                usuario.password1 = informacion['password1']
+                usuario.password2 = informacion['password2']
+                usuario.save()
+                
+                return render(request, "MiApp2/Inicio.html")
+            
+    else:
+        miFormulario = UserEditForm(initial={'email':usuario.email})
+        
+    return render(request, "MiApp2/editarPerfil.html", {"miFormulario":miFormulario, "usuario":usuario})
+
+@login_required
+def inicio(request):
+    
+    avatares = Avatar.objects.filter(user=request.user.id)
+    
+    return render(request, "MiApp2"/inicio.html, {"url":avatares[0].imagen.url})
+
+@login_required
+def agregarAvatar(request):
+    if request.method == 'POST':
+        
+        miFormulario = AvatarForm(request.POST, request.FILES)
+        
+        if miFormulario.is_valid:
+            
+            u = User.objects.get(username=request.user)
+            
+            avatar = Avatar (user=u, imagen=miFormulario.cleaned.data['imagen'])
+            
+            avatar.save()
+            
+            return render(request, "MiApp2/inicio.html")
+    else:
+        
+        miFormulario = AvatarForm()
+        
+    return render(request, "MiApp2/AgregarAvatar.html", {"miFormulario":miFormulario})
