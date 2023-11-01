@@ -1,6 +1,6 @@
 from django import forms
 
-from django.contrib.auth.forms import UserCreationForm, AvatarForm
+from django.contrib.auth.forms import UserCreationForm
 
 from django.contrib.auth.models import User
 
@@ -51,8 +51,8 @@ class UserEditForm(UserCreationForm):
 
         help_texts = {k:"" for k in fields}
         
-class AvatarForm(AvatarForm):
+# class AvatarForm(AvatarForm):
     
-    email =forms.EmailField(label="modificar E-mail")
-    password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Repetir La Contraseña', widget=forms.PasswordInput)
+    # email =forms.EmailField(label="modificar E-mail")
+    # password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
+    # password2 = forms.CharField(label='Repetir La Contraseña', widget=forms.PasswordInput)

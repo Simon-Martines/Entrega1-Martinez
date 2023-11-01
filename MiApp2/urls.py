@@ -4,16 +4,11 @@ from MiApp2 import views
 
 from django.contrib.auth.views import LogoutView
 
-import admin, include
 #Para Imagenes
 from django.conf import settings
 from django.conf.urls.static import static 
 
 urlpatterns = [
-
-        path('admin/', admin.site.urls),
-    
-        path('MiApp2/', include('MiApp2.urls')),
         
         path('', views.mostrar_index, name='Inicio' ),
 		#estas son funciones comunes pàra TRABAJO

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from MiApp2.models import Trabajo, Empleado, Avatar
-from .forms import CrearTrabajoForm, CrearEmpleadoForm, CrearClientesForm, UserRegisterForm, UserEditForm, AvatarForm
+from .forms import CrearTrabajoForm, CrearEmpleadoForm, CrearClientesForm, UserRegisterForm, UserEditForm #, AvatarForm
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
