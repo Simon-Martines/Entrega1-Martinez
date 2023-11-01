@@ -31,9 +31,17 @@ def mostrar_empleado(request):
 
 
 def mostrar_index(request):
+	
+	if request.user.is_authenticated:
+		print(Avatar.objects.get(user = request.user.id).imagen.url)
+		contexto = {
+		"avatar": Avatar.objects.get(user = request.user.id).imagen.url
+	}
+	else:
+		contexto = {}
+	
 
-
-        return render(request, 'MiApp2/home.html')
+	return render(request, 'MiApp2/home.html', contexto)
 
 
 def crear_trabajo(request):
@@ -292,23 +300,23 @@ def inicio(request):
     
     return render(request, "MiApp2"/inicio.html, {"url":avatares[0].imagen.url})
 
-@login_required
-def agregarAvatar(request):
-    if request.method == 'POST':
+# @login_required
+# def agregarAvatar(request):
+    # if request.method == 'POST':
         
-        miFormulario = AvatarForm(request.POST, request.FILES)
+        # miFormulario = AvatarForm(request.POST, request.FILES)
         
-        if miFormulario.is_valid:
+        # if miFormulario.is_valid:
             
-            u = User.objects.get(username=request.user)
+            # u = User.objects.get(username=request.user)
             
-            avatar = Avatar (user=u, imagen=miFormulario.cleaned.data['imagen'])
+            # avatar = Avatar (user=u, imagen=miFormulario.cleaned.data['imagen'])
             
-            avatar.save()
+            # avatar.save()
             
-            return render(request, "MiApp2/inicio.html")
-    else:
+            # return render(request, "MiApp2/inicio.html")
+    # else:
         
-        miFormulario = AvatarForm()
+        # miFormulario = AvatarForm()
         
-    return render(request, "MiApp2/AgregarAvatar.html", {"miFormulario":miFormulario})
+    # return render(request, "MiApp2/AgregarAvatar.html", {"miFormulario":miFormulario})

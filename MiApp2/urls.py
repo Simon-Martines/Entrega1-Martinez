@@ -40,9 +40,11 @@ urlpatterns = [
 		
 		
 		path('editarPerfil', views.editarPerfil, name="editarPerfil"),
-        path('agregarAvatar', views.agregarAvatar, name="AgregarAvatar"),
+        # path('agregarAvatar', views.agregarAvatar, name="AgregarAvatar"),
         path('soporte/', views.soporte, name='Soporte'),
         path('login/', views.login_request, name='Login'),
         path('register/', views.register, name='Register'),
         path('logout/', LogoutView.as_view(template_name='MiApp2/logout.html'), name='Logout'),
 ]
+
+urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -37,17 +37,16 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'Mostrar Trabajo' %}">Mostrar Trabajo</a>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Mostrar Empleados' %}"> Mostrar Empleados</a>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Soporte' %}"> Soporte</a>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Logout' %}"> Logout</a>  
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Logout' %}">   <img src="{{avatar}}" height=100 width=70 /> Desconectarse</a>  
+                          
                         {% else %}
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Register' %}"> Register</a>
-                        {% if request.user.is_authenticated %} 
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Register' %}"> Registrarse</a>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Login' %}"> iNICIAR</a> 
                         {% endif %}
 
-                        {% if request.user.is_authenticated %}
-                        <img src="{{(Avatar.objects.filter(user = request.user.id))[0].imagen.url}}"/>
-                        <p class="text-muted small mb-4 mb-lg-0">Hola, {{user.username}}!!!.</p>
-                        {{% endif %}}
+                        
+
+                        
                     </ul>
                 </div>
             </div>
@@ -63,7 +62,6 @@
                         {% if request.user.is_authenticated %}
                         <div class="text-center">
                             <img height ="40px" src="{{url}}">
-                            <h3> Hola Denuevo {{user.username}}!</h3>
                         {% else %}
                             <h1 class="mb-5">¡Hola Desconocido!</h1>
                         {% endif %}
