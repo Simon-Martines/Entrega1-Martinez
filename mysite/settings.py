@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'MiApp2',
     'miblog',
     # 'MiBLOG'
     
@@ -60,7 +59,12 @@ ROOT_URLCONF = 'ProyectoV2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR, 'Templates'],
+        #  Add  'TEMPLATE_DIRS' here
+        
+'DIRS': [
+            BASE_DIR / 'templates'
+        ],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
