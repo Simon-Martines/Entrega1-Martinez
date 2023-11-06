@@ -31,17 +31,17 @@ def mostrar_empleado(request):
 
 
 def mostrar_index(request):
+    contexto = {}
 	
-	if request.user.is_authenticated:
-		print(Avatar.objects.get(user = request.user.id).imagen.url)
-		contexto = {
-		"avatar": Avatar.objects.get(user = request.user.id).imagen.url
-	}
-	else:
-		contexto = {}
-	
-
-	return render(request, 'MiApp2/home.html', contexto)
+    if request.user.is_authenticated:
+        try:
+            coso = Avatar.objects.get(user = request.user.id).imagen.url
+            contexto = {"avatar": coso}
+        except (Avatar.DoesNotExist):
+            pass
+    else:
+        contexto = {}
+    return render(request, 'MiApp2/home.html', contexto)
 
 
 def crear_trabajo(request):

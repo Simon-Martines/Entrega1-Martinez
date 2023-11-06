@@ -38,11 +38,12 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'Mostrar Empleados' %}"> Mostrar Empleados</a>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Soporte' %}"> Soporte</a>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Logout' %}">   <img src="{{avatar}}" height=100 width=70 /> Desconectarse</a>  
-                          
+                        
                         {% else %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'Register' %}"> Registrarse</a>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Login' %}"> iNICIAR</a> 
                         {% endif %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'miblog-index' %}"> Blog</a> 
 
                         
 
