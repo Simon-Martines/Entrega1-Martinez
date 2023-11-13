@@ -320,3 +320,4 @@ def inicio(request):
         # miFormulario = AvatarForm()
         
     # return render(request, "MiApp2/AgregarAvatar.html", {"miFormulario":miFormulario})
+    

@@ -32,12 +32,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Inicio' %}">Menu Principal</a>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Inicio' %}"> <img src="{{avatar}}" height=60 width=70 /> Menu Principal</a>
                         {% if request.user.is_authenticated %} 
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Mostrar Trabajo' %}">Mostrar Trabajos</a>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Mostrar Trabajo' %}">Mostrar Trabajos</a> 
                         <li class="nav-item"><a class="nav-link" href="{% url 'Mostrar Empleados' %}"> Mostrar Empleados</a>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Soporte' %}"> Soporte</a>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Logout' %}">   <img src="{{avatar}}" height=70 width=80 /> Desconectarse</a>  
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Logout' %}"> Desconectarse</a>  
                         
                         {% else %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'Login' %}"> Iniciar</a> 
@@ -58,13 +57,13 @@
                 <div class="d-flex justify-content-center">
                     <div class="text-center">
                         <img height ="40px" src="{{url}}">
-                        <h3> Hola Denuevo {{user.username}}!</h3>
                         <h1 class="mx-auto my-0 text-lower case">TechFog</h1>
                         {% if request.user.is_authenticated %}
+                        <h3 class="mx-auto my-0 text-uppercase"> Bienvenido Devuelta {{user.username}}!</h3>
                         <div class="text-center">
                             <img height ="40px" src="{{url}}">
                         {% else %}
-                            <h1 class="mb-5">¡Hola Desconocido!</h1>
+                            <h3 class="mx-auto my-0 text-lower case">¡Hola Desconocido!</h3>
                         {% endif %}
                         <h2 class="text-white-50 mx-auto mt-2 mb-5"> {% block codigo_fatal %} {% endblock %} </h2>
                         {% comment %} <a class="btn btn-primary" href="#about">Comenzar</a> {% endcomment %} 
