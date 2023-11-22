@@ -1,5 +1,6 @@
-{% extends 'base.html' %}
-{% block content %}<div class="container">
+{% extends 'miblog/base.html' %} 
+{% block codigo_fatal2 %}
+    <div class="container">
     <div class="row">
     <div class="col-md-8 card mb-4  mt-3 left  top"> 
     <div class="card-body">
@@ -9,7 +10,7 @@
     </div>
     </div> 
 {% block sidebar %}
-{% include 'sidebar.html' %} 
+{% include 'miblog/sidebar.html' %} 
 {% endblock sidebar %} 
     <div class="col-md-8 card mb-4  mt-3 ">
     <div class="card-body">
@@ -46,4 +47,5 @@
     </div>
 </div>
 </div>
-{% endblock content %}
+{% endblock codigo_fatal2 %}
+

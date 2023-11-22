@@ -57,10 +57,16 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'ProyectoV2.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        #  Add  'TEMPLATE_DIRS' here
+        
+'DIRS': [
+            BASE_DIR / 'templates'
+        ],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,7 +78,6 @@ TEMPLATES = [
         },
     },
 ]
-
 WSGI_APPLICATION = 'ProyectoV2.wsgi.application'
 
 
@@ -123,6 +128,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
@@ -132,3 +138,4 @@ LOGIN_URL = '/MiApp2/login'
 #Para Imagenes
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
+
