@@ -9,7 +9,7 @@
 {% block codigo_fatal %}
 <form action="" method="get">
 
-    <input type="text" name="trabajo" id="trabajo" placeholder="buscar trabajo">
+    <input type="text" name="trabajo" id="trabajo" placeholder="Buscar Trabajo">
 
     <input type="submit" value="Buscar">
 
@@ -19,7 +19,7 @@
 
     <ul>
     {% for trabajo in trabajos %}
-            <li>Trabajo: Nombre: {{trabajo.nombre}} Sueldo: {{trabajo.sueldo}} </li> 
+            <li>Trabajo: Nombre: {{trabajo.nombre}} y Sueldo: {{trabajo.sueldo}} </li> 
     {% endfor %}
     </ul>
     

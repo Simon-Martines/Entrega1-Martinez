@@ -9,7 +9,7 @@
 {% block codigo_fatal %}
 <form action="" method="get">
 
-    <input type="text" name="email" id="email" placeholder="buscar e-mail">
+    <input type="text" name="email" id="email" placeholder="Buscar E-Mail">
 
     <input type="submit" value="Buscar">
 
@@ -19,7 +19,7 @@
 
     <ul>
     {% for empleado in empleados %}
-            <li>Empleado: Nombre: {{empleado.nombre}} apellido: {{empleado.apellido}} con correo: {{empleado.email}} y profesion: {{empleado.profesion}}</li> 
+            <li>Empleado: Nombre: {{empleado.nombre}}, Apellido: {{empleado.apellido}}, Correo: {{empleado.email}} y Profesion: {{empleado.profesion}}</li> 
     {% endfor %}
     </ul>
     
